@@ -1,0 +1,122 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>宽带在线—管理平台</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #content {
+            width: 100%;
+            height: 100%;
+            background: #bebe00;
+        }
+
+        .contentP {
+            width: 50%;
+            height: 30%;
+            float: left;
+            color: #fff;
+            position: relative;
+        }
+
+        #contentP1 {
+            background: #c40000;
+        }
+
+        #contentP2 {
+            background: #13c45c;
+        }
+
+        #contentP3 {
+            background: #000085;
+        }
+
+        #contentP4 {
+            background: #000;
+        }
+
+        #contentP5 {
+            background: #c39a5e;
+        }
+
+        #contentP6 {
+            background: rgba(110, 10, 243, 0.84);
+        }
+
+        #contentHead {
+            height: 10%;
+            font: 50px bolder;
+            font-family: 楷体;
+            color: #330186;
+            text-align: center;
+        }
+
+        #content a {
+            /*font: 60px bold;*/
+            /*text-align: center;*/
+            /*margin: 0 auto;*/
+            font: 40px bold;
+            position: absolute;
+            font-family: Consolas;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0)
+        }
+
+        a:hover {
+            background: #c9c900;
+            cursor: pointer;
+        }
+
+    </style>
+    <script type="text/javascript" charset="UTF-8">
+
+        /* 点击对象，转到 url */
+        function boundDivHref(obj, url) {
+            if (!obj) {
+                return;
+            }
+            obj.onclick = function () {
+                window.location.href = url;
+            };
+        }
+
+        /* 页面加载 */
+        window.onload = function () {
+            var contentPa1 = document.getElementById('contentPa1');
+            var url1 = 'http://61.50.245.249:17000/svnadmin/';
+            var contentPa2 = document.getElementById('contentPa2');
+            var url2 = 'http://61.50.245.249:18081/nexus/#welcome';
+            var contentPa3 = document.getElementById('contentPa3');
+            var url3 = 'http://61.50.245.249:18080/hudson/';
+            var contentPa4 = document.getElementById('contentPa4');
+            var url4 = 'http://61.50.245.249:19000/sonarqube/';
+            var contentPa5 = document.getElementById('contentPa5');
+            var url5 = 'http://61.50.245.249:6022/zentao/';
+            var contentPa6 = document.getElementById('contentPa6');
+            var url6 = 'http://61.50.245.249:19000/sonarqube/';
+            boundDivHref(contentPa1, url1);
+            boundDivHref(contentPa2, url2);
+            boundDivHref(contentPa3, url3);
+            boundDivHref(contentPa4, url4);
+            boundDivHref(contentPa5, url5);
+//            boundDivHref(contentPa6, url6);
+
+        };
+    </script>
+</head>
+<body>
+<div id="content">
+    <p id="contentHead">联通宽带在线—工程开发管理平台</p>
+    <div id="contentP1" class="contentP"><a id="contentPa1">SVN ADMIN<br/>代码库管理</a></div>
+    <div id="contentP2" class="contentP"><a id="contentPa2">NEXUS<br/>依赖包仓库</a></div>
+    <div id="contentP3" class="contentP"><a id="contentPa3">HUDSON CI<br/>自动化构建</a></div>
+    <div id="contentP4" class="contentP"><a id="contentPa4">SONAR<br/>代码质量检测</a></div>
+    <div id="contentP5" class="contentP"><a id="contentPa5">ZENTAO<br/>项目进度管理</a></div>
+    <div id="contentP6" class="contentP"><a id="contentPa6">嘿嘿，待定。。。</a></div>
+</div>
+</body>
+</html>

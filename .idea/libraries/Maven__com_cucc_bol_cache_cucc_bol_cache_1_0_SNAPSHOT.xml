@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.cucc.bol.cache:cucc-bol-cache:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cucc/bol/cache/cucc-bol-cache/1.0-SNAPSHOT/cucc-bol-cache-1.0-20161116.022951-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cucc/bol/cache/cucc-bol-cache/1.0-SNAPSHOT/cucc-bol-cache-1.0-20161116.022951-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/cucc/bol/cache/cucc-bol-cache/1.0-SNAPSHOT/cucc-bol-cache-1.0-20161116.022951-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

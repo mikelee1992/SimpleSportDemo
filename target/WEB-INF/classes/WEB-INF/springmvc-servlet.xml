@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/context 	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/beans		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/jdbc		http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd 
+		http://www.springframework.org/schema/tx 		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/aop 		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/mvc		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd ">
+
+    <!-- springmvc 扫包 @Controller @Service @Component @Repository ... -->
+    <!-- 扫到注解后，是自带自动装配的 -->
+    <context:component-scan base-package="org.lmy.controller"
+                            use-default-filters="false">
+        <!-- 只扫@Controller -->
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+    <!-- 默认的注解映射的支持 -->
+    <mvc:annotation-driven/>
+
+
+    <!-- uri访问拦截器 -->
+    <!-- <mvc:interceptors> -->
+    <!-- <mvc:interceptor> -->
+    <!-- <mvc:mapping path="/**"/> -->
+    <!-- <bean class="com.my.crm.itp.interceptor.IpAuthenticationInterceptor"> -->
+    <!-- <property name="excludeIps"> -->
+    <!-- <list> -->
+    <!-- <value>0:0:0:0:0:0:0:1</value> -->
+    <!-- </list> -->
+    <!-- </property> -->
+    <!-- </bean> -->
+    <!-- </mvc:interceptor> -->
+    <!-- </mvc:interceptors> -->
+
+
+    <!-- 完成请求和注解POJO的映射 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <!-- 下面的配置不起作用 -->
+        <!-- 		<property name="messageConverters"> -->
+        <!-- 			<list> -->
+        <!-- 				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" /> -->
+        <!-- 				<bean class="org.springframework.http.converter.StringHttpMessageConverter"> -->
+        <!-- 					<constructor-arg value="UTF-8" /> -->
+        <!-- 					<property name="supportedMediaTypes"> -->
+        <!-- 						<list> -->
+        <!-- 							<value>text/plain;charset=UTF-8</value> -->
+        <!-- 						</list> -->
+        <!-- 					</property> -->
+        <!-- 				</bean> -->
+        <!-- 			</list> -->
+        <!-- 		</property> -->
+    </bean>
+
+    <!-- 对转向前台页面的路径解析prefix：前缀， suffix：后缀 -->
+    <bean id="jspViewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=""/><!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑 -->
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView"/>
+    </bean>
+
+    <!-- 对静态资源文件的访问 -->
+    <mvc:default-servlet-handler/>
+
+    <!-- 文件上传解析器 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!-- 文件上传最大值 5MB,5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"></property>
+    </bean>
+
+    <!-- 系统错误转发配置[并记录错误日志] -->
+    <bean id="exceptionResolver"
+          class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="defaultErrorView" value="error"></property>   <!-- 默认为500，系统错误(error.jsp) -->
+        <property name="defaultStatusCode" value="500"></property>
+        <property name="statusCodes"><!-- 配置多个statusCode -->
+            <props>
+                <prop key="error">500</prop>  <!-- error.jsp -->
+                <prop key="error1">404</prop> <!-- error1.jsp -->
+            </props>
+        </property>
+        <property name="exceptionMappings">
+            <props>
+                <!-- 这里你可以根据需要定义N多个错误异常转发 -->
+                <prop key="java.lang.Exception">common/error</prop>  <!-- 其他错误为'未定义错误'(unknowError.jsp) -->
+            </props>
+        </property>
+    </bean>
+
+</beans>
+
+

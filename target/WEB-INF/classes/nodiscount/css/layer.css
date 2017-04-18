@@ -1,0 +1,33 @@
+/*===============pop===================*/
+.layer{position:fixed;_position:absolute;top:0;left:0;width:100%;height:100%;z-index:9999;}
+.mask {position:absolute; left:0px;width:100%;height:100%; background:#000; opacity:0.7; filter:alpha(opacity=70);}
+.layer_box{width:90%; margin-left:5%; position:relative;}
+.layer_cricleBox_count { position:relative; z-index:99; text-align:center; color:#FFF; font-size:0.875rem;}
+.layer_cricleBox_count h3{ text-align:center; padding:6% 0;}
+.layer_cricleBox_count ul{ height:300px; overflow-y:scroll;}
+.layer_cricleBox_count ul li{ text-align:left; line-height:200%;}
+.closeIcon{position:fixed; width:10%; bottom:2%; left:45%;}
+.closeIcon img{width:100%;}
+.layer_errorBox_count { position:relative; z-index:99; text-align:center; margin-top:30%; }
+.layer_errorBox_count img{width:60%;}
+.layer_bdBox_count{position:relative; z-index:99; text-align:center; margin-top:30%; background:#000; opacity:0.7; filter:alpha(opacity=70); padding:10% 0; width:60%; border-radius:4px;}
+.layer_bdBox_count img { width:40%;}
+.layer_bdBox_count2 img{ width:24%;}
+.layer_bdBox_count p {font-size:0.875rem; color:#FFF; text-align:center; margin-top:6%;}
+.layer_bdBox_count2 p{font-size:0.875rem; color:#FFF; text-align:center;}
+.layer_bdBox_count2{position:relative; z-index:99; text-align:center; margin-top:30%; background:#000; opacity:0.7; filter:alpha(opacity=70); padding:10% 0; width:100%; border-radius:4px;}
+.close_pop{ display:inline-block; width:12%; position:absolute; top:-18%; right:0;}
+.close_pop img{width:100%;}
+.pop_notice{margin-top:4%; border:1px #FFFFFF solid; border-radius:4px; width:90%;}
+.pop_notice p{font-size:0.875rem; color:#FFF; padding:2%; text-align:left;}
+.marginT_6{margin-top:6%;}
+
+.layer_cricleBox_paycount{position:relative; z-index:99; text-align:center; color:#FFF; font-size:0.875rem; padding:4%; background:#ffffff; border-radius:4px; margin-top:30%;}
+.layer_cricleBox_paycount p{text-align:center; color:#4eaadf; border-bottom:1px #4eaadf solid; line-height:50px; height:50px; font-size:1rem;}
+.close_pic{display:inline-block; width:1rem; float:right;}
+.close_pic img{width:100%;}
+.pop_input_div{border:1px #d8d8d8 solid; border-radius:4px; overflow:hidden; margin-top:6%;}
+.pop_input_div li{width:16.2%; border-right:1px #d8d8d8 solid; height:40px; line-height:40px; float:left;}
+.pop_input_div li:last-child{border-right:none;}
+.pop_input{width:100%; text-align:center; border:0;}
+.pop_psw{float:right; color:#4eaadf; margin-top:4%;}

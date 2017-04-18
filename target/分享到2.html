@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>分享到2</title>
+    <style type="text/css">
+        #div1 {
+            width: 100px;
+            height: 200px;
+            background: #CCC;
+            position: absolute;
+            left: -100px;
+        }
+
+        #div1 span {
+            width: 20px;
+            height: 60px;
+            line-height: 20px;
+            text-align: center;
+            left: 100px;
+            background: yellow;
+            position: absolute;
+        }
+    </style>
+    <script type="text/javascript" charset="UTF-8">
+
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.onmouseover = function () {
+                startMove();
+            };
+            oDiv.onmouseout = function () {
+                startMove2();
+            };
+        };
+
+        var timer = null;
+        function startMove() {
+            var oDiv = document.getElementById('div1');
+            clearInterval(timer);
+            timer = setInterval(function () {
+                if (oDiv.offsetLeft == 0) {
+                    clearInterval(timer);
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + 10 + 'px';
+                }
+            }, 30);
+        }
+
+        function startMove2() {
+            var oDiv = document.getElementById('div1');
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var iSpeed = -10;
+                if (oDiv.offsetLeft <= -100) {
+                    clearInterval(timer);
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + iSpeed + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <span>分享到</span>
+</div>
+</body>
+</html>

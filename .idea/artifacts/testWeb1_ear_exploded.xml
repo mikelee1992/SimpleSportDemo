@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="testWeb1:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/testWeb1_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="testWeb1/javaeeApplication/javaEEApplication" />
+      <element id="directory" name="web.war">
+        <element id="artifact" artifact-name="testWeb1:war exploded" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="javax.transaction-api-1.2" />
+        <element id="library" level="project" name="javax.json.processing-1.0" />
+        <element id="library" level="project" name="Hibernate Validator-5.0.1" />
+      </element>
+    </root>
+  </artifact>
+</component>
